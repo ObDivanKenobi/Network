@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+    <script type="text/javascript" src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <style>
+        /*Убирает "прыжки" страницы при появлении скролла*/
+        html {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            margin: auto;
+        }
+
+        header{
+            height: 100px;
+        }
+
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap > div {
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body class="container">
+    <header class="container-fluid">
+        <div class="wrap">
+            <div>
+                <h1>ВРаботе</h1>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
